@@ -1,5 +1,5 @@
 # RATv0
-This was the second easy (100 pt) challenge in the ctf. Although it was "easy," it has less solves than both of the medium challenges which I thought was pretty interesting.
+This was the second easy (100 pt) challenge in the reverse category for this CTF. Although it was "easy," it has less solves than both of the medium challenges which I thought was pretty interesting.
 
 ![Image](./images/challenge.png)
 
@@ -11,7 +11,7 @@ So I figured I had to dive into the binary of the executable to get some informa
 
 ![Image](./images/procmon.png)
 
-Since the file path had '.net' in it, I figured that this was a C# dll file, so I went ahead and opened it up in [dnSpy](https://github.com/dnSpy/dnSpy) to see what was going on. After, opening it and filtering through the initialization stuff, I found out that it would just AES decrypt data from a host. Since we were given the encrypted data in the secretkey file, I now had all the pieces to throw the data into cyberchef to get our final output! (key and iv were in the MakeNetworkConnection function, I converted them from byte arrays to hex strings to make them fit the formatting for cyberchef)
+Since the file path had '.net' in it, I figured that this was a C# dll file, so I went ahead and opened it up in [dnSpy](https://github.com/dnSpy/dnSpy) to see what was going on. After, opening it and filtering through the initialization stuff, I found out that it would just AES decrypt data from a host (the host was down which is why I was getting the error message from the start). Since we were given the encrypted data in the secretkey file, I now had all the pieces to throw the data into cyberchef to get our final output! (key and iv were in the MakeNetworkConnection function, I converted them from byte arrays to hex strings to make them fit the formatting for cyberchef)
 
 ![Image](./images/dnSpy.png)
 

@@ -1,5 +1,5 @@
 # Bunker
-This challenge was the first of the easy (100 pt) challenges in this coop.
+This challenge was the first of the easy (100 pt) challenges in the reverse category for this CTF.
 
 ![Image](./images/challenge.png)
 
