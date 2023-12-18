@@ -35,6 +35,7 @@ From here, it's been established that the input needs to be 4 different strings 
 One general rule that stays true throughout this is that each string must be exactly 5 characters long, so keep that in mind.
 
 **--- Rule 1 ---**
+
 The first rule is that the first string must contain digits that when summed together equals 28. An example string would be "99910" because 9+9+9+1+0 equals 28. "77077", "45676", and "33499" are also valid examples.
 
 
