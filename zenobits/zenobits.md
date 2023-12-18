@@ -34,22 +34,30 @@ From here, it's been established that the input needs to be 4 different strings 
 
 One general rule that stays true throughout this is that each string must be exactly 5 characters long, so keep that in mind.
 
-**Rule 1**
+**--- Rule 1 ---**
+
 The first rule is that the first string must contain digits that when summed together equals 28. An example string would be "99910" because 9+9+9+1+0 equals 28. "77077", "45676", and "33499" are also valid examples.
 
-**Rule 2**
+
+**--- Rule 2 ---**
+
 The second rule is that the difference between each neighboring ASCII value in the second string must be 5 and the string must be sorted. For example, the string "AFKPU" would work because when mapping out the ASCII value of each character, we get [65 70 75 80 85]. As you can see, the difference between each of the neighboring values in this list is 5, and the list is sorted.
 
-**Rule 3**
+
+**--- Rule 3 ---**
+
 This one is much simpler, take your string and split the 5 characters as so (a `|` represents a split): `xx|x|xx`
+
 Every character in this string must be a digit, so take the following input, "54351", and split it into "54", "3", and "51". From there, convert each substring into an integer, and add the last number and the middle number together. If the sum equals the first number, then you've got a valid input. In the example I gave, "54351" was a valid input because adding 51 and 3 gives us 54. More examples of valid inputs for this rule would be "30327", "71962", and "14113".
 
-**Rule 4**
-This one was a bit weirder, and would be easier to explain using python code because this would be a lot to write out
+
+**--- Rule 4 ---**
+
+This one was a bit weirder, and would be easier to explain using python psuedocode because this would be a lot to write out
 ```py
 # the string is valid if the following are true
 
-data = # 5 character string input here
+data = 'xxxxx' # 5 character string input here
 assert data[0] % 10 == 0
 assert data[1] % 4 == 0
 assert data[2] % 2 == 0
@@ -58,11 +66,11 @@ assert data[4] % 9 == 0
 ```
 A valid input for this would be "PxvFc"
 
-Now that we've got all the rules covered, we can tae all the example valid inputs I gave and join them with `-`s to get a key that looks like `99910-AFKPU-54351-PxvFc`. Running the local binary, we can see that it's a valid key, but it gives us a warning about what to expect from the remote binary:
+Now that we've got all the rules covered, we can take all the example valid inputs I gave and join them with `-`s to get a key that looks like `99910-AFKPU-54351-PxvFc`. Running the local binary, we can see that it's a valid key, but it gives us a warning about what to expect from the remote binary:
 
 ![Image](./images/local.png)
 
-I'll save you the trouble of figuring this out, but it'll ask you for 50 unique and valid keys before giving you the flag, so I put together a script using pwntools to automate the key generation process for me. I'm not the best at python so it's a bit sloppy, but it works:
+I'll save you the trouble of figuring this out, but it'll ask you for 50 unique and valid keys before giving you the flag, so I put together a script using pwntools to automate the key generation and key sending process for me. I'm not the best at python so it's a bit sloppy, but it works:
 ```py
 #!/usr/bin/env python3
 from pwn import *
