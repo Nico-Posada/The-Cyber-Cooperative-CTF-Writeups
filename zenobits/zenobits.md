@@ -46,7 +46,7 @@ The second rule is that the difference between each neighboring ASCII value in t
 
 **--- Rule 3 ---**
 
-This one is much simpler, take your string and split the 5 characters as so (a `|` represents a split): `xx|x|xx`
+This one is much simpler, take the third string and split the 5 characters as so (a `|` represents a split): `xx|x|xx`
 
 Every character in this string must be a digit, so take the following input, "54351", and split it into "54", "3", and "51". From there, convert each substring into an integer, and add the last number and the middle number together. If the sum equals the first number, then you've got a valid input. In the example I gave, "54351" was a valid input because adding 51 and 3 gives us 54. More examples of valid inputs for this rule would be "30327", "71962", and "14113".
 
@@ -57,7 +57,7 @@ This one was a bit weirder, and would be easier to explain using python psuedoco
 ```py
 # the string is valid if the following are true
 
-data = 'xxxxx' # 5 character string input here
+data = 'xxxxx' # your 4th string input here
 assert data[0] % 10 == 0
 assert data[1] % 4 == 0
 assert data[2] % 2 == 0
@@ -70,7 +70,7 @@ Now that we've got all the rules covered, we can take all the example valid inpu
 
 ![Image](./images/local.png)
 
-I'll save you the trouble of figuring this out, but it'll ask you for 50 unique and valid keys before giving you the flag, so I put together a script using pwntools to automate the key generation and key sending process for me. I'm not the best at python so it's a bit sloppy, but it works:
+I'll save you the trouble of figuring this out, but it'll ask you for 50 unique and valid keys before giving you the flag, so I put together a script using pwntools to automate the key generation and key sending process. I'm not the best at python so it's a bit sloppy, but it works:
 ```py
 #!/usr/bin/env python3
 from pwn import *
