@@ -26,4 +26,4 @@ From there, let's test the string with the executable:
 
 ![Image](./images/flag.png)
 
-Got a valid key! The challenge says that it'll accept any valid key as a flag, so that key is the final flag.s
+Got a valid key! The challenge says that it'll accept any valid key as a flag, so that key is the final flag.

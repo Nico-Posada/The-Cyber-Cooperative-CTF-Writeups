@@ -50,5 +50,5 @@ Running this gives the following output:
 
 Now we can run it on the remote host and get the flag! (don't forget to input 50000 first)
 
-![Image]()
+![Image](./images/flag.png)
 
