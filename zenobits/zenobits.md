@@ -58,11 +58,11 @@ This one was a bit weirder, and would be easier to explain using python psuedoco
 # the string is valid if the following are true
 
 data = 'xxxxx' # your 4th string input here
-assert data[0] % 10 == 0
-assert data[1] % 4 == 0
-assert data[2] % 2 == 0
-assert data[3] % 5 == 0
-assert data[4] % 9 == 0
+assert ord(data[0]) % 10 == 0
+assert ord(data[1]) % 4 == 0
+assert ord(data[2]) % 2 == 0
+assert ord(data[3]) % 5 == 0
+assert ord(data[4]) % 9 == 0
 ```
 A valid input for this would be "PxvFc"
 
